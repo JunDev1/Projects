@@ -1,0 +1,140 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+}
+//apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdk 32
+    viewBinding.enabled = true
+    defaultConfig {
+        applicationId "com.example.lotus_1"
+        minSdk 25
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+
+}
+
+
+
+dependencies {
+    implementation "com.jakewharton:butterknife:10.0.0"
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
+    annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation "com.mikepenz:materialdrawer:7.0.0"
+
+//required support lib modules
+    implementation "androidx.appcompat:appcompat:1.4.1"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.annotation:annotation:1.3.0"
+    implementation "com.google.android.material:material:1.6.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+
+// Add for NavController support
+    implementation "com.mikepenz:materialdrawer-nav:7.0.0"
+    // Navigation bar from 52 to 66 line.
+        //val nav_version = "2.4.2"
+
+//        // Kotlin
+//        implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+//        implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+//        implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
+//
+//        // Feature module Support
+//        implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.4.2'
+//        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+//        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+//
+//    // Testing Navigation
+//        androidTestImplementation 'androidx.navigation:navigation-testing:2.4.2'
+//
+//        // Jetpack Compose Integration
+//        implementation 'androidx.navigation:navigation-compose:2.4.2'
+
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.0.0-beta2'
+    implementation 'com.firebaseui:firebase-ui:0.6.0'
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.1' //зависимость для FirebaseUI
+    implementation platform('com.google.firebase:firebase-bom:29.3.1') // Зависимость для библиотек Firebase
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0'
+
+
+    //CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:21.0.5'
+
+    //Coroutines for play services
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.0'
+
+    //Normal Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+    //Image picker
+    implementation 'com.github.dhaval2404:imagepicker:1.7.5'
+
+    //Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+    implementation 'com.google.firebase:firebase-common-ktx:20.1.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
+    implementation 'com.google.android.gms:play-services-cast-framework:21.0.1'
+    implementation 'androidx.appcompat:appcompat:1.6.0-alpha04'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.databinding:databinding-runtime:7.2.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //implementation "androidx.core:core-ktx:+"
+   // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.62.7"
+
+    implementation 'androidx.multidex:multidex:2.0.1' // Для избежания ошибки
+    // Caused by: org.gradle.api.internal.artifacts.ivyservice.DefaultLenientConfiguration$ArtifactResolveException: Could not resolve all files for configuration ':app:debugCompileClasspath'.
+
+
+}
+

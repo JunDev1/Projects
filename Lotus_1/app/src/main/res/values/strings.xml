@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lotus</string>
+                <!--  Settings_fragment  -->
+    <string name="settings_default_status">In online</string>
+    <string name="settings_default_name">Damdin Sandanov</string>
+    <string name="settings_text_account">Account</string>
+    <string name="settings_default_number">+7(999)-999-99-99</string>
+    <string name="settings_label_phone_number">Click on to change a phone number</string>
+    <string name="settings_default_login">Damdin Sandanov</string>
+    <string name="settings_label_login">Your name</string>
+    <string name="settings_email">Email</string>
+    <string name="settings_label_email">Your email</string>
+    <string name="settings_sign_out">Sign out</string>
+                <!--  Registration_Activity  -->
+    <string name="registration_welcome_to_lotus_id">Welcome to Lotus ID</string>
+    <string name="settings_input_name">Name</string>
+    <string name="settings_input_surname">Surname</string>
+    <string name="settings_rename">Rename</string>
+    <string name="settings_menu_change_name">Rename</string>
+    <string name="settings_toast_name_is_empty">The name can\'t be blank</string>
+    <string name="toast_data_update">Data update</string>
+    <string name="settings_hint_username">Username</string>
+
+
+    <color name="app_name">#FFFFFF</color>
+</resources>

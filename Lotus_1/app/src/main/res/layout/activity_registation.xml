@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".RegistrationActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/dataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/material_drawer_primary">
+
+        <TextView
+            android:id="@+id/tv_welcome_to_lotus_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/et_email"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="50dp"
+            android:gravity="bottom|center"
+            android:text="@string/registration_welcome_to_lotus_id"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/et_radius"
+            android:hint="Email"
+            android:paddingStart="@dimen/registration_padding_start"
+            android:textSize="@dimen/small_text"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/et_email"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_radius"
+            android:hint="Password"
+            android:paddingStart="@dimen/registration_padding_start"
+            android:textSize="@dimen/small_text"
+            tools:ignore="Deprecated,MissingConstraints"
+            android:password="true"/>
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            style="@style/btn_registration"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/et_password"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:text="Sign in" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            style="@style/btn_registration"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:text="Sign up"
+            android:layout_marginBottom="10dp" />
+           </RelativeLayout>
+
+</RelativeLayout>
