@@ -3,13 +3,10 @@ package Fragments
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import com.example.lotus_1.MainActivity
 import com.example.lotus_1.R
 import com.example.lotus_1.utilits.*
-import kotlinx.android.synthetic.main.fragment_change_name.*
 import kotlinx.android.synthetic.main.fragment_change_username.*
-import kotlinx.android.synthetic.main.fragment_settings.*
 import java.util.*
 
 class ChangeUsernameFragment : BaseFragment(R.layout.fragment_change_username) {
@@ -56,7 +53,7 @@ class ChangeUsernameFragment : BaseFragment(R.layout.fragment_change_username) {
     }
 
     private fun changeUsername() {
-        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(mUsername).setValue(UID).
+        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(mUsername).setValue(CURRENT_UID).
                 addOnCompleteListener {
                     if (it.isSuccessful) {
                         updateCurrentUsername()
@@ -65,7 +62,7 @@ class ChangeUsernameFragment : BaseFragment(R.layout.fragment_change_username) {
     }
 
     private fun updateCurrentUsername() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME).
+        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME).
                 setValue(mUsername).addOnCompleteListener {
                     if (it.isSuccessful){
                         showToast("Data update")

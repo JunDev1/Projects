@@ -5,8 +5,6 @@ package Fragments
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import com.example.lotus_1.MainActivity
 import com.example.lotus_1.R
 import com.example.lotus_1.utilits.*
@@ -48,7 +46,7 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
             showToast(getString(R.string.settings_toast_name_is_empty))
         } else {
             val fullname ="$name $surname"
-            REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_FULLNAME).
+            REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_FULLNAME).
                     setValue(fullname).addOnCompleteListener {
                         if (it.isSuccessful) {
                             showToast(getString(R.string.toast_data_update))

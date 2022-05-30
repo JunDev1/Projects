@@ -15,4 +15,6 @@
         <item name="windowNoTitle">true</item>   <!--Избавление от шапки на странице-->
         <item name="android:windowFullscreen">true</item> <!--Избавление от шапки на странице-->
     </style>
+
+
 </resources>

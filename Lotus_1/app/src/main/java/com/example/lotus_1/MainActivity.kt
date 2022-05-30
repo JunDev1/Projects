@@ -8,11 +8,7 @@ import com.example.lotus_1.databinding.ActivityMainBinding
 import com.example.lotus_1.models.user
 import com.example.lotus_1.objects.AppDrawer
 import com.example.lotus_1.utilits.*
-import com.firebase.ui.auth.data.model.User
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +27,12 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         initFields() // ининциализация приватной функции выполняющая действия
         initFunc() // аналогично
+        AppStates.updateState(AppStates.ONLINE)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        AppStates.updateState(AppStates.OFFLINE)
     }
 
     private fun initFunc() {
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUser() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(UID).
+        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).
         addListenerForSingleValueEvent(AppValueEventListener {
             USER = it.getValue(user::class.java)?:user()
         })

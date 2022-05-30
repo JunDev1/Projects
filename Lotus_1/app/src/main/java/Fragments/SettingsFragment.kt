@@ -33,7 +33,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private fun initFields() {
         settings_login.text = USER.username
         settings_email.text = USER.email
-        settings_status.text = USER.status
+        settings_status.text = USER.state
         settings_username.text = USER.fullname
                settings_btn_change_login.setOnClickListener { ReplaceFragment(ChangeUsernameFragment()) }
     }

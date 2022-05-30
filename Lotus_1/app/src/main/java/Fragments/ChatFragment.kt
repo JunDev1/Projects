@@ -30,4 +30,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         // TODO: Use the ViewModel
     }
 
+    fun previousMonthAction(view: View) {}
+    fun nextMonthAction(view: View) {}
+
 }
